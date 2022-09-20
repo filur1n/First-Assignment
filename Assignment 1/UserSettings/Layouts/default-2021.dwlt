@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 18
+  controlID: 84
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 19
+  controlID: 85
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 20
+  controlID: 86
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -325,14 +325,15 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\william.chung\Assignment 1
+  m_LastProjectPath: C:\Users\william.chung\Documents\GitHub\First-Assignment\Assignment
+    1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3e6e0000
-    m_LastClickedID: 28222
-    m_ExpandedIDs: 000000003e6e000000ca9a3bffffff7f
+    m_SelectedIDs: 485f0000
+    m_LastClickedID: 24392
+    m_ExpandedIDs: 00000000485f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000485f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -488,9 +489,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 88720000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d4d6ffff72e9ffffcef9ffff30fbffff
+      m_ExpandedIDs: 16fbffff825e0000865e0000dc5e0000e05e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -739,9 +740,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 24.350067, y: 1.3391395, z: 4.593226}
+    m_Target: {x: 0.37835744, y: 1.1913614, z: 1.6387492}
     speed: 2
-    m_Value: {x: 24.350067, y: 1.3391395, z: 4.593226}
+    m_Value: {x: 0.37835744, y: 1.1913614, z: 1.6387492}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -788,13 +789,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.0009235422, y: -0.634671, z: -0.00075068686, w: -0.77277184}
+    m_Target: {x: -0.1622004, y: -0.3867389, z: 0.0692963, w: -0.9051712}
     speed: 2
-    m_Value: {x: 0.0009235491, y: -0.63467574, z: -0.0007506925, w: -0.7727776}
+    m_Value: {x: -0.16219936, y: -0.3867364, z: 0.06929585, w: -0.9051654}
   m_Size:
-    m_Target: 14.163468
+    m_Target: 2.4907012
     speed: 2
-    m_Value: 14.163468
+    m_Value: 2.4907012
   m_Ortho:
     m_Target: 0
     speed: 2
