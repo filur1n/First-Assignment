@@ -34,6 +34,8 @@ public class Projectile : MonoBehaviour
         if (destruction == null) // if the result is NO
         {
             Destroy(collisionObject);
+            
+            TurnManager.GetInstance().ChangeTurn();
             // GameObject damageIndicator = Instantiate(damageIndicatorPrefab);
             //  damageIndicator.transform.position = collision.GetContact(0);
             // TurnManager.GetInstance().Changeturn();
