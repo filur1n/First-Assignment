@@ -11,7 +11,7 @@ public class TurnManager : MonoBehaviour
     //Maybe remove to another manager
     
     private static TurnManager instance;
-    private int currentPlayerIndex;
+    private int currentPlayerIndex = 2;
     [SerializeField] private CinemachineFreeLook cam1;
     [SerializeField] private CinemachineFreeLook cam2;
      private PlayerTurn playerOne;
@@ -46,7 +46,7 @@ public class TurnManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            currentPlayerIndex = 1;
+            currentPlayerIndex = 2;
             playerOne = playerOneObject.GetComponent<PlayerTurn>();
             playerTwo = playerTwoObject.GetComponent<PlayerTurn>();
             //playerOne.SetPlayerTurn(1);
