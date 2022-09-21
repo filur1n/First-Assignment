@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -29,14 +30,18 @@ public class ThirdPersonMovement : MonoBehaviour
     private bool isGrounded;
 
     [SerializeField] private int playerIndex;
-    
-   
-    
+    [SerializeField] private PlayerTurn playerTurn;
+    [SerializeField] private Transform shootingStartPosition;
+    private GameObject projectile;
+
+    private void Awake()
+    {
+        projectile = TurnManager.GetInstance().GetProcetilePrefab();
+    }
+
     // Update is called once per frame
     void Update()
     {
-
-       // if (TurnManager.GetInstance().IsItPlayerTurn(playerIndex))
         {
 
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -46,6 +51,32 @@ public class ThirdPersonMovement : MonoBehaviour
                 velocity.y = -2f;
             }
 
+            if (TurnManager.GetInstance().IsItPlayerTurn(playerIndex))
+            {
+                Movement();
+                Fire();
+            }
+            
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
+
+            
+            
+            
+        }
+
+        void Fire()
+        {
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                GameObject mewProjectile = Instantiate(projectile, shootingStartPosition.position, shootingStartPosition.rotation);
+                //mewProjectile.transform.position = shootingStartPosition.position;
+                mewProjectile.GetComponent<Projectile>().Initialize();
+                TurnManager.GetInstance().ChangeTurn();
+            }
+        }
+        void Movement()
+        {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
             Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
@@ -54,11 +85,6 @@ public class ThirdPersonMovement : MonoBehaviour
             {
                 velocity.y = Mathf.Sqrt(JumpHeight * -2f * gravity);
             }
-
-
-            velocity.y += gravity * Time.deltaTime;
-            controller.Move(velocity * Time.deltaTime);
-
             if (direction.magnitude >= 0.1f)
             {
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
