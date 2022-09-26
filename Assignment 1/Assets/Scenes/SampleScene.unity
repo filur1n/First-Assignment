@@ -8274,6 +8274,7 @@ GameObject:
   - component: {fileID: 1408891528}
   - component: {fileID: 1408891529}
   - component: {fileID: 1408891530}
+  - component: {fileID: 1408891531}
   m_Layer: 0
   m_Name: Third Person Player
   m_TagString: Player
@@ -8358,6 +8359,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 0}
   shootingStartPosition: {fileID: 0}
+--- !u!114 &1408891531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408891525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c66dc9f709cbdf42bef95c733ed4443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  healthBar: {fileID: 1027699838}
 --- !u!4 &1409331575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 437978, guid: cba063d2715f7a345b1c64609f0e864e, type: 3}
@@ -10766,6 +10782,7 @@ GameObject:
   - component: {fileID: 1830625079}
   - component: {fileID: 1830625078}
   - component: {fileID: 1830625077}
+  - component: {fileID: 1830625081}
   m_Layer: 0
   m_Name: Third Person Player 2
   m_TagString: Player
@@ -10850,6 +10867,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1830625081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830625076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c66dc9f709cbdf42bef95c733ed4443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 100
+  healthBar: {fileID: 219327903}
 --- !u!1 &1844596306
 GameObject:
   m_ObjectHideFlags: 0
