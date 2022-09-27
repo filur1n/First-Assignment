@@ -25,7 +25,9 @@ public class ThirdPersonMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public float JumpHeight = 3f;
+    public int damage = 1;
     
+
 
     private bool isGrounded;
 
@@ -33,6 +35,28 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] private PlayerTurn playerTurn;
     [SerializeField] private Transform shootingStartPosition;
     private GameObject projectile;
+    
+    
+    //health
+    public int maxHealth = 20;
+    public int currentHealth;
+
+    public HealthBar healthBar;
+    
+    void Start()
+    {
+        currentHealth = maxHealth;
+        //healthBar.SetMaxHealth(maxHealth);
+    }
+    
+    
+
+    public void TakeDamage(int damage)
+    {
+        Debug.Log("DamageTaken");
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
 
     private void Awake()
     {
@@ -43,6 +67,10 @@ public class ThirdPersonMovement : MonoBehaviour
     void Update()
     {
         {
+            if (currentHealth <= 0)
+            {
+                this.gameObject.SetActive(false);
+            }
 
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 

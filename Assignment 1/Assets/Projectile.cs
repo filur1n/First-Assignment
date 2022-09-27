@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed = 10f;
     [SerializeField] private Rigidbody projectileBody;
     private bool isActive;
+    public float life = 10;
+    private int damageCount = 5;
 
     public void Initialize()
     {
@@ -27,8 +29,10 @@ public class Projectile : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
+
+        Debug.Log("htisometinhrt");
         GameObject collisionObject = collision.gameObject;
         DestructionFree destruction = collisionObject.GetComponent<DestructionFree>(); // checks if the game object who receives the collision has the "no no" script
         if (destruction == null) // if the result is NO
@@ -39,6 +43,13 @@ public class Projectile : MonoBehaviour
             // GameObject damageIndicator = Instantiate(damageIndicatorPrefab);
             //  damageIndicator.transform.position = collision.GetContact(0);
             // TurnManager.GetInstance().Changeturn();
+        }
+
+        if (collision.transform.tag =="Player")
+        {
+            Debug.Log("Collision");
+            collision.transform.GetComponent<ThirdPersonMovement>().TakeDamage(damageCount);
+            Destroy(gameObject, life);
         }
     }
 }
