@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Rigidbody projectileBody;
     private bool isActive;
     public float life = 10;
-    private int damageCount = 5;
+    [SerializeField] private int damageCount = 5;
 
     public void Initialize()
     {
@@ -22,19 +22,20 @@ public class Projectile : MonoBehaviour
     {
         if (isActive)
         {
-            projectileBody.MovePosition(transform.position + transform.forward * speed * Time.deltaTime);
-            
-            
+            var forward = transform.forward;
+            projectileBody.MovePosition(transform.position + forward * speed * Time.deltaTime);
+            //projectileBody.velocity = new Vector3(forward.normalized * speed * Time.deltaTime);
+
         }
     }
 
 
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
 
         Debug.Log("htisometinhrt");
         GameObject collisionObject = collision.gameObject;
-        DestructionFree destruction = collisionObject.GetComponent<DestructionFree>(); // checks if the game object who receives the collision has the "no no" script
+        /*DestructionFree destruction = collisionObject.GetComponent<DestructionFree>(); // checks if the game object who receives the collision has the "no no" script
         if (destruction == null) // if the result is NO
         {
             Destroy(collisionObject);
@@ -43,9 +44,9 @@ public class Projectile : MonoBehaviour
             // GameObject damageIndicator = Instantiate(damageIndicatorPrefab);
             //  damageIndicator.transform.position = collision.GetContact(0);
             // TurnManager.GetInstance().Changeturn();
-        }
-
-        if (collision.transform.tag =="Player")
+        }*/
+    
+        if (collision.transform.CompareTag("Player"))
         {
             Debug.Log("Collision");
             collision.transform.GetComponent<ThirdPersonMovement>().TakeDamage(damageCount);

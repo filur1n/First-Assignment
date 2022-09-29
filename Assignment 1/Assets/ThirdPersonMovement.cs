@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class ThirdPersonMovement : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        //healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(maxHealth);
     }
     
     
@@ -54,7 +55,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Debug.Log("DamageTaken");
-        currentHealth -= damage;
+        currentHealth -= damage; 
         healthBar.SetHealth(currentHealth);
     }
 
@@ -70,6 +71,7 @@ public class ThirdPersonMovement : MonoBehaviour
             if (currentHealth <= 0)
             {
                 this.gameObject.SetActive(false);
+                SceneManager.LoadScene(0);
             }
 
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
