@@ -71,7 +71,7 @@ public class ThirdPersonMovement : MonoBehaviour
             if (currentHealth <= 0)
             {
                 this.gameObject.SetActive(false);
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(1);
             }
 
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
